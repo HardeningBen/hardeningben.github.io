@@ -20,5 +20,5 @@ Vamos a necesitar lo siguiente:
 
 <br>
 Aquí puedes ver el video con los pasos que debes seguir para instalar Ubuntu Server en una nueva máquina virtual:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nWbQPikt0WE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7tA2XWAObEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
