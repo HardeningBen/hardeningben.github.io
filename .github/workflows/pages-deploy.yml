@@ -2,7 +2,7 @@ name: 'Automatic build'
 on:
   push:
     branches:
-      - hardeningben.github.io 
+      - master 
     paths-ignore:
       - .gitignore
       - README.md
