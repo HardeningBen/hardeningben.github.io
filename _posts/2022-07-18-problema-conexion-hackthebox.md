@@ -3,7 +3,7 @@ title: Problema de conexión con HackTheBox
 author: HardeningBen
 date: 2022-07-18 19:00:00
 categories: [HackTheBox]
-tags: [problemas,conexion]
+tags: [Problemas,Conexion]
 math: true
 mermaid: true
 ---
