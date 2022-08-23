@@ -6,6 +6,7 @@ categories: [Laboratorio,Docker]
 tags: [Maquina virtual,VirtualBox,Ubuntu Server,Docker,Docker Engine,Docker Compose,DVWA,Juice Shop,WebGoat,WebWolf]
 math: true
 mermaid: true
+hidden: true
 ---
 
 En la segunda parte instalamos *Docker* en nuestra máquina virtual *ubuntu-docker-labs* para crear los contenedores con las aplicaciones de nuestro laboratorio.
@@ -33,5 +34,5 @@ Instalación de WebGoat 7:
 Instalación de WebGoat 8 + WebWolf:  
 [![Screenshot WebGoat7](/posts/2022/08/19/07_screenshot.png)](https://youtu.be/SLmZjUeO6e4 "Video: Instalar WebGoat 8 + WebWolf"){:target="_blank"}
 
-Aunque este no es un paso necesario para la instalación del laboratorio, sí que considero recomendable que hagamos una instantánea de nuestra máquina virtual, por si en algún momento queremos volver a este estado, no tener que reinstalar todo desde cero. El proceso de creación de la instantánea es el mismo que el utilizado en la segunda parte con la diferencia que en este caso, por un despiste, no la he creado con la máquina parada:  
+Al igual que en el final de la segunda parte, volver a crear una instantánea de la máquina virtual no es algo necesario para crear el laboratorio, pero sí que es recomendable realizarla. El proceso es el mismo con la diferencia que en este caso no la he creado con la máquina apagada:  
 [![Screenshot Instantánea](/posts/2022/08/19/08_screenshot.png)](https://youtu.be/NxSzCGcLec8 "Video: Crear instantánea"){:target="_blank"}
