@@ -9,86 +9,42 @@ mermaid: true
 hidden: false
 ---
 
-Este post no trata un problema de ciberseguridad, pero sí que resuelve fácilmente un problema que podéis tener cuando hay varias cuentas de Google configuradas en el navegador.
+En este post vamos a resolver un problema que, aunque no está relacionado con la ciberseguridad, me parece interesante al haberme sucedido en varias ocasiones.
+
+El problema en cuestión es que, al abrir un link de contenido compartido de Google Drive teniendo varias cuentas de Google configuradas, el navegador decide abrirla siempre con la cuenta principal, no con la que tenemos seleccionada y estamos usando en ese momento.
 
 Para que sea más claro el ejemplo, vamos a ponerle estos nombres a las cuentas: 
 - Cuenta principal de Google
 - Segunda cuenta de Google
 - Tercera cuenta de Google
 
-El problema en cuestión viene cuando nos han enviado un link de un contenido compartido:
+Pongamos que alguien nos envía este link de una carpeta compartida de Google Drive:
+>https://drive.google.com/drive/folders/\<carpeta_compartida\>
 
-Ejemplo: 
-https://drive.google.com/drive/folders/<carpeta_compartida>
+Si queremos abrirlo con nuestra "Segunda cuenta de Google", lo fácil y evidente sería seleccionar esta cuenta en Google Drive y hacer clic en el link del contenido compartido, ¿verdad?... pues no. En vez de abrirse con la cuenta que queremos, el navegador decide que lo va a abrir con la cuenta principal, y da igual las vueltas que le des.
 
-Si queremos abrirlo con nuestra "Segunda cuenta de Google", lo fácil y evidente, es seleccionar esta cuenta en Google Drive y hacer clic en el link del contenido compartido... pues no. En vez de abrirse con la cuenta que queremos, se abre con la cuenta principal, y da igual las vueltas que le des.
+En otras ocasiones me era indiferente utilizar una cuenta u otra, pero en este caso sí que necesitaba abrirlo con otra cuenta distinta a la principal, así que, tras un par de intentos fallidos, y como no quería complicarme demasiado para no demorar lo que realmente tenía que hacer, le he preguntado a ChatGPT... y ninguna de las soluciones que me ha dado la he visto ni práctica ni interesante (las dejo más abajo).
 
-Llegado a este punto, como no quería complicarme demasiado la existencia y quería darle una solución rápida para poder centrarme en lo que realmente quería hacer, le he preguntado a ChatGPT, pero ninguna de las soluciones que me ha dado la veía práctica ni interesante (las dejo más abajo)
+Al final, he encontrado la solución por mi cuenta, observando las diferencias en las URL y llegando a esta conclusión:
 
-Al final, he tenido que encontrar la solución por mi cuenta, observando las diferencias en las URL y llegando a esta conclusión:
+Cuando tenemos varias cuentas configuradas, la URL muestra el número de cuenta a utilizar indicando **/u/\<número_de_cuenta\>**. Para obtenerlo, símplemente hay que acceder a la cuenta que vas a utilizar y fijarte qué número tiene:
 
-Cuando tenemos varias cuentas configuradas, la URL muestra el número de cuenta a utilizar indicando /u/<número_de_cuenta>. Para obtenerlo, símplemente tenéis que acceder con la cuenta que queráis utilizar y fijaros qué número tiene:
+>- https://drive.google.com/drive**/u/0/**home  _< -- -- Cuenta principal de Google_
+>- https://drive.google.com/drive**/u/1/**home  _< -- -- Segunda cuenta de Google_
+>- https://drive.google.com/drive**/u/2/**home  _< -- -- Tercera cuenta de Google_
 
-Ejemplo:
-- https://drive.google.com/drive/u/0/home  <-- Cuenta principal de Google
-- https://drive.google.com/drive/u/1/home  <-- Segunda cuenta de Google
-- https://drive.google.com/drive/u/2/home  <-- Tercera cuenta de Google
+Si te fijas, este dato no está indicado en el link del contenido compartido, con lo que Google Drive asume que debe utilizar la "Cuenta principal de Google", sin importarle la que tenemos seleccionada.
+>https://drive.google.com/drive/folders/\<carpeta_compartida\>
 
-Este dato no está indicado en el link del contenido compartido, con lo que Google Drive asume que debe utilizar la "Cuenta principal de Google", sin importarle la que tuviésemos seleccionada.
+Para que este link se abra con nuestra "Segunda cuenta de Google", tenemos que indicar que debe usar esa cuenta, añadiendo el texto **/u/1** a la URL y quedando de esta forma:
+>https://drive.google.com/drive**/u/1/**folders/\<carpeta_compartida\>
 
-Recordemos el link original: 
-https://drive.google.com/drive/folders/<carpeta_compartida>
+Como ves, la solución es bastante sencilla, y no es necesario tener que cambiar de navegadores ni hacer cosas demasiado extrañas.
 
-Para que este link se abra con nuestra "Segunda cuenta de Google", tendremos que indicarle que debe usar esa cuenta añadiendo el texto /u/1 a la URL, quedando de esta forma:
-https://drive.google.com/drive/u/1/folders/<carpeta_compartida>
+Espero que este artículo te haya servido de ayuda.
 
-Como véis, la solución es bastante sencilla, y no es necesario tener que cambiar de navegadores ni hay que hacer cosas demasiado extrañas.
-
-Espero que este artículo os haya servido de ayuda.
-
-Aquí os dejo mi conversación con ChatGPT:
-
+Aquí te dejo mi conversación con ChatGPT, por si tienes curiosidad:
 
 ![2025-05-25_10-39 ChatGPT1 screenshot](/posts/2025/05/25/2025-05-25_10-39 ChatGPT 1.png)
-![2025-05-25_10-39 ChatGPT2 screenshot](/posts/2025/05/25/2025-05-25_10-39 ChatGPT 2.png)
+![2025-05-25_10-40 ChatGPT2 screenshot](/posts/2025/05/25/2025-05-25_10-40 ChatGPT 2.png)
 
-
-
-[
-En google drive tengo configuradas varias cuentas, selecciono la que me interesa utilizar en este momento, pero al hacer clic en un link que me han pasado con contenido compartido lo abre con otra de las cuentas que tengo, no con la que he seleccionado, ¿por qué? ¿cómo puedo abrirlo con la cuenta que me interesa?
-]: #
-
-```
-Este es un problema bastante común cuando se tienen varias cuentas de Google abiertas simultáneamente en el mismo navegador. Google utiliza una cuenta como "principal" o "predeterminada", y los enlaces que abres (como los de Google Drive) generalmente se abren con esa cuenta principal, no necesariamente con la que estás usando activamente en otra pestaña.
-
-¿Por qué sucede esto?
-Cuando haces clic en un enlace a un archivo compartido en Google Drive:
-
-Google intenta abrirlo con la primera cuenta con la que iniciaste sesión en ese navegador.
-
-Incluso si seleccionas otra cuenta después, esa selección sólo aplica a esa pestaña o sesión, no a cómo se abren nuevos enlaces.
-
-¿Cómo abrir el enlace con la cuenta correcta?
-✅ Opción 1: Copiar y pegar el enlace en una ventana del navegador donde ya estés usando la cuenta correcta
-Abre una pestaña nueva en tu navegador.
-
-Ve a https://drive.google.com y cambia a la cuenta con la que quieres ver el contenido (si aún no estás en ella).
-
-Una vez que estás en Drive con la cuenta correcta, pega el enlace que te pasaron en la barra de direcciones.
-
-✅ Opción 2: Usar una ventana de incógnito
-Abre una ventana en modo incógnito (Ctrl + Shift + N en Chrome).
-
-Pega el enlace allí.
-
-Inicia sesión con la cuenta de Google que debe tener acceso.
-
-✅ Opción 3: Cambiar la cuenta predeterminada (opcional, más técnico)
-Cierra sesión en todas tus cuentas de Google.
-
-Vuelve a iniciar sesión primero con la cuenta que quieras que sea la predeterminada.
-
-Luego inicia sesión en las otras cuentas que necesites.
-
-Ahora, los enlaces se abrirán por defecto con esta cuenta.
-```
