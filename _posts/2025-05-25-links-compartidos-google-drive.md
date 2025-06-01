@@ -23,7 +23,7 @@ Pongamos que alguien nos envía este link de una carpeta compartida de Google Dr
 
 Si queremos abrirlo con nuestra "Segunda cuenta de Google", lo fácil y evidente sería seleccionar esta cuenta en Google Drive y hacer clic en el link del contenido compartido, ¿verdad?... pues no. En vez de abrirse con la cuenta que queremos, el navegador decide que lo va a abrir con la cuenta principal, y da igual las vueltas que le des.
 
-En otras ocasiones me era indiferente utilizar una cuenta u otra, pero en este caso sí que necesitaba abrirlo con otra cuenta distinta a la principal, así que, tras un par de intentos fallidos, y como no quería complicarme demasiado para no demorar lo que realmente tenía que hacer, le he preguntado a ChatGPT... y ninguna de las soluciones que me ha dado la he visto ni práctica ni interesante (las dejo más abajo).
+En otras ocasiones, para mi, era indiferente utilizar una cuenta u otra, pero en este caso sí que necesitaba abrirlo con otra cuenta distinta a la principal, así que, tras un par de intentos fallidos, y como no quería complicarme demasiado para no demorar lo que realmente tenía que hacer, le he preguntado a ChatGPT... y ninguna de las soluciones que me ha dado la he visto ni práctica ni interesante (las dejo más abajo).
 
 Al final, he encontrado la solución por mi cuenta, observando las diferencias en las URL y llegando a esta conclusión:
 
